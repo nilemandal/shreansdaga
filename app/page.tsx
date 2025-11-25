@@ -1,65 +1,215 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Play } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Home() {
+  const services = [
+    {
+      title: "Transcendental Breathwork",
+      description: "Transform your consciousness through powerful breathing techniques",
+      icon: "🌬️",
+    },
+    {
+      title: "Guided Meditations",
+      description: "Find inner peace with expertly crafted meditation sessions",
+      icon: "🧘‍♂️",
+    },
+    {
+      title: "Live Workshops",
+      description: "Join interactive sessions and connect with like-minded souls",
+      icon: "✨",
+    },
+    {
+      title: "Virtual Sessions",
+      description: "Experience transformation from the comfort of your home",
+      icon: "💻",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-[#FAF9F6] to-white overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-20 right-20 w-96 h-96 bg-[#4A7C59]/10 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="absolute bottom-20 left-20 w-96 h-96 bg-[#B8956A]/10 rounded-full blur-3xl"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <Container className="relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold text-[#2C3E3F] mb-6 leading-tight">
+                Discover Inner Peace
+                <br />
+                <span className="text-[#4A7C59]">Through Meditation</span>
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl md:text-2xl text-[#2C3E3F]/70 mb-8 leading-relaxed"
+            >
+              Join Shreansdaga in transformative breathwork and meditation
+              <br />
+              sessions designed to elevate your consciousness
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <Button size="lg" className="group">
+                Book a Session
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="outline" size="lg" className="group">
+                <Play className="mr-2 h-5 w-5" />
+                Watch Introduction
+              </Button>
+            </motion.div>
+
+            {/* Breathing Animation Circle */}
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="mx-auto mt-16 w-32 h-32 rounded-full border-4 border-[#4A7C59]/30 flex items-center justify-center"
+            >
+              <motion.div
+                animate={{
+                  scale: [1, 0.8, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-24 h-24 rounded-full bg-[#4A7C59]/20"
+              />
+            </motion.div>
+            <p className="mt-4 text-sm text-[#2C3E3F]/50">Breathe with us</p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E3F] mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-[#2C3E3F]/70 max-w-2xl mx-auto">
+              Explore our range of meditation and breathwork offerings designed
+              to support your journey to inner peace
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[#4A7C59] to-[#8BA888]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Begin Your Journey?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Join thousands who have transformed their lives through meditation
+              and breathwork
+            </p>
+            <Button variant="secondary" size="lg" className="group">
+              Get Started Today
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </motion.div>
+        </Container>
+      </section>
+    </>
+  );
+}
+
+function ServiceCard({ service, index }: { service: any; index: number }) {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+    >
+      <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-[#4A7C59]/30">
+        <CardHeader>
+          <div className="text-5xl mb-4">{service.icon}</div>
+          <CardTitle>{service.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-base">
+            {service.description}
+          </CardDescription>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

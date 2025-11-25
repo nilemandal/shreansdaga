@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors - Light Mode */
+  /* Brand Colors - Light Mode (aligned to provided logo) */
   --background: #FAF9F6;
   --foreground: #2C3E3F;
-  
-  /* Primary Colors */
-  --primary-green: #4A7C59;
+
+  /* Primary (Forest Green) */
+  --primary-green: #275E3D; /* brand green from logo */
   --primary-sage: #8BA888;
-  
-  /* Accent Colors */
-  --accent-gold: #B8956A;
-  --accent-bronze: #A0826D;
+
+  /* Accent (Earth Brown/Gold) */
+  --accent-gold: #8B5A1E; /* brand brown from logo */
+  --accent-bronze: #A07232;
   
   /* Neutral Colors */
   --cream: #FAF9F6;
@@ -24,7 +24,7 @@
   --card-foreground: #2C3E3F;
   --border: #E5E5E5;
   --input: #E5E5E5;
-  --ring: #4A7C59;
+  --ring: var(--primary-green);
 }
 
 @theme inline {
@@ -46,7 +46,7 @@
     --foreground: #FAF9F6;
     --card: #2C3E3F;
     --card-foreground: #FAF9F6;
-    --border: #4A7C59;
+    --border: var(--primary-green);
     --input: #2C3E3F;
   }
 }
