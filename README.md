@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shreansdaga Foundation Website
 
-## Getting Started
+A modern, immersive meditation and breathwork website built with Next.js, featuring calming animations, ambient audio, and SEO optimization.
 
-First, run the development server:
+## 🧘‍♂️ About
+
+Shreansdaga Foundation is a meditation guide platform offering live and virtual meditation sessions, breathwork training, and a comprehensive library of meditation resources.
+
+## ✨ Features
+
+- 🎨 Immersive, calming user experience with earthy color palette
+- 🎵 Ambient audio integration with Howler.js
+- ✨ Smooth animations with Framer Motion
+- 📱 Fully responsive design (mobile & desktop)
+- 🌓 Dark/Light mode support
+- ♿ WCAG 2.1 AA accessibility compliant
+- 🚀 SEO optimized with Next.js 15
+- 🎭 Beautiful UI components with Radix UI
+- 📖 YouTube library integration
+- 📅 Event and workshop listings
+- 💬 Contact and booking capabilities
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Animations**: Framer Motion, Lottie
+- **Audio**: Howler.js
+- **Icons**: Lucide React
+- **Theme**: next-themes
+
+See [TECH_STACK.md](./docs/TECH_STACK.md) for complete documentation.
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+shreansdaga/
+├── app/                    # Next.js app directory (routes)
+├── components/
+│   ├── layout/            # Header, Footer, Navigation
+│   └── ui/                # Reusable UI components
+├── contexts/              # React contexts (Audio, Theme)
+├── hooks/                 # Custom hooks
+├── lib/                   # Utility functions
+├── types/                 # TypeScript types
+├── public/
+│   └── assets/
+│       ├── images/        # Images and logos
+│       ├── sounds/        # Audio files
+│       └── animations/    # Lottie animations
+└── docs/                  # Documentation
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Brand Colors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Primary Green**: #4A7C59
+- **Accent Gold**: #B8956A
+- **Background Cream**: #FAF9F6
+- **Text Charcoal**: #2C3E3F
 
-## Deploy on Vercel
+## 🌐 Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Home
+- About Us
+- Transcendental Breathwork
+- Meditations & Courses
+- Events & Workshops
+- Contact Us
+- Privacy Policy
+- Disclaimer
+- Terms of Use
+- Code of Conduct
+- Investor Communication
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 Social Media
+
+- Facebook
+- Instagram
+- LinkedIn
+- YouTube
+- WhatsApp
+
+## 📝 License
+
+All rights reserved - Shreansdaga Foundation
+
+## 🤝 Contributing
+
+This is a private project for Shreansdaga Foundation.
+
+---
+
+**Built with 💚 for meditation and mindfulness**
